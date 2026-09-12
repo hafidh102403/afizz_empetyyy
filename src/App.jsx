@@ -995,7 +995,7 @@ function App() {
         <div className="education-card">
 
           <div className="education-date">
-            2021 – 2026
+            2021 – 2025
           </div>
 
           <div className="education-detail">
