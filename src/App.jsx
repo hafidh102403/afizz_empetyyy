@@ -2,6 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import profileImage from "./assets/profile.jpeg";
 
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
 const experiences = [
   {
     date: "DEC 2025 – JUN 2026",
@@ -74,6 +78,10 @@ const experiences = [
     },
   },
 ];
+
+/* =========================================================
+   PROJECTS
+========================================================= */
 
 const projects = [
   {
@@ -149,6 +157,10 @@ const projects = [
   },
 ];
 
+/* =========================================================
+   CERTIFICATES
+========================================================= */
+
 const certificates = [
   {
     number: "01",
@@ -178,6 +190,10 @@ const certificates = [
   },
 ];
 
+/* =========================================================
+   SKILLS
+========================================================= */
+
 const qualityAssuranceSkills = [
   "Manual Testing",
   "Test Scenario",
@@ -206,6 +222,10 @@ const tools = [
   "VS Code",
   "phpMyAdmin",
 ];
+
+/* =========================================================
+   QA WORKFLOW
+========================================================= */
 
 const qaWorkflow = [
   {
@@ -254,47 +274,38 @@ const qaWorkflow = [
   },
 ];
 
+/* =========================================================
+   PROJECT PREVIEW
+   ========================================================= */
+
 function ProjectPreview({ project }) {
-  if (project.image) {
-    return (
-      <div className="project-preview">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="project-preview-image"
-        />
-      </div>
-    );
-  }
+  const [imageError, setImageError] = useState(false);
 
   return (
     <div className="project-preview">
-      <div className="fake-mobile">
-        <div className="mobile-camera"></div>
 
-        <div className="mobile-screen">
-          <div className="mobile-logo">LOS</div>
-
-          <div className="mobile-title">
-            Welcome Back
-          </div>
-
-          <div className="mobile-input">
-            Username
-          </div>
-
-          <div className="mobile-input">
-            Password
-          </div>
-
-          <div className="mobile-button">
-            LOGIN
-          </div>
+      {!imageError ? (
+        <img
+          src={project.image}
+          alt={`${project.title} project`}
+          className="project-preview-image"
+          loading="lazy"
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <div className="project-image-error">
+          <span>IMAGE NOT FOUND</span>
+          <small>{project.image}</small>
         </div>
-      </div>
+      )}
+
     </div>
   );
 }
+
+/* =========================================================
+   APP
+========================================================= */
 
 function App() {
   const [language, setLanguage] = useState("ID");
@@ -305,7 +316,10 @@ function App() {
   return (
     <div className="portfolio">
 
-      {/* NAVBAR */}
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
+
       <nav className="navbar">
 
         <a
@@ -441,8 +455,10 @@ function App() {
 
       </nav>
 
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
-      {/* HERO */}
       <section
         className="profile-section"
         id="home"
@@ -512,8 +528,8 @@ function App() {
 
         </div>
 
-
         {/* PROFILE IMAGE */}
+
         <div className="profile-image-area">
 
           <div className="profile-image">
@@ -529,8 +545,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          SUMMARY
+      ===================================================== */}
 
-      {/* SUMMARY */}
       <section
         className="content-section summary-section"
         id="summary"
@@ -600,8 +618,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          EXPERIENCE
+      ===================================================== */}
 
-      {/* EXPERIENCE */}
       <section
         className="content-section experience-section"
         id="experience"
@@ -679,8 +699,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          QA TESTING
+      ===================================================== */}
 
-      {/* QA TESTING */}
       <section
         className="content-section qa-testing-section"
         id="qa-testing"
@@ -822,8 +844,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          QA CASE STUDY
+      ===================================================== */}
 
-      {/* QA CASE STUDY */}
       <section
         className="content-section qa-case-study-section"
         id="qa-case-study"
@@ -941,8 +965,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          EDUCATION
+      ===================================================== */}
 
-      {/* EDUCATION */}
       <section
         className="content-section education-section"
         id="education"
@@ -998,8 +1024,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          PROJECTS
+      ===================================================== */}
 
-      {/* PROJECTS */}
       <section
         className="content-section projects-section"
         id="projects"
@@ -1102,8 +1130,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          CERTIFICATES
+      ===================================================== */}
 
-      {/* CERTIFICATES */}
       <section
         className="content-section certificates-section"
         id="certificates"
@@ -1189,8 +1219,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          SKILLS
+      ===================================================== */}
 
-      {/* SKILLS */}
       <section
         className="content-section skills-section"
         id="skills"
@@ -1312,8 +1344,10 @@ function App() {
 
       </section>
 
+      {/* =====================================================
+          CONTACT
+      ===================================================== */}
 
-      {/* CONTACT */}
       <section
         className="content-section contact-section"
         id="contact"
