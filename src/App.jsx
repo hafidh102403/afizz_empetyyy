@@ -177,9 +177,8 @@ const certificates = [
     category: "LANGUAGE CERTIFICATION",
     year: "2025",
     detail: "TOTAL SCORE : 510",
-    file: "/certificates/toefl-prediction-test.pdf",
+    file: "/certificates/certificate-02.pdf",
   },
-
   {
     number: "03",
     title: "UJI PROFISIENSI ERP ODOO PT. JIDOKA SYSTEM INDONESIA",
@@ -500,9 +499,8 @@ function App() {
 
             <a
               href="/cv-hafidh.pdf"
+              download="CV-Hafidh-Nur-Sya-Bani.pdf"
               className="profile-button button-dark"
-              target="_blank"
-              rel="noreferrer"
             >
 
               <span className="download-icon">
@@ -764,10 +762,10 @@ function App() {
 
                   {index <
                     qaWorkflow.length - 1 && (
-                    <span className="qa-arrow">
-                      →
-                    </span>
-                  )}
+                      <span className="qa-arrow">
+                        →
+                      </span>
+                    )}
 
                 </div>
 
