@@ -502,7 +502,6 @@ function App() {
               download="CV-Hafidh-Nur-Sya-Bani.pdf"
               className="profile-button button-dark"
             >
-
               <span className="download-icon">
                 ↓
               </span>
@@ -510,7 +509,6 @@ function App() {
               {isEnglish
                 ? "DOWNLOAD RESUME"
                 : "DOWNLOAD CV"}
-
             </a>
 
             <a
@@ -522,24 +520,31 @@ function App() {
                 : "LIHAT PROYEK"}
             </a>
 
-          </div>
-
-        </div>
-
-        {/* PROFILE IMAGE */}
-
-        <div className="profile-image-area">
-
-          <div className="profile-image">
-
-            <img
-              src={profileImage}
-              alt="Hafidh Nur Sya Bani"
-            />
+            <a
+              href="#contact"
+              className="profile-button button-outline"
+            >
+              {isEnglish
+                ? "CONTACT ME"
+                : "HUBUNGI SAYA"}
+            </a>
 
           </div>
 
-        </div>
+          {/* PROFILE IMAGE */}
+
+          <div className="profile-image-area">
+
+            <div className="profile-image">
+
+              <img
+                src={profileImage}
+                alt="Hafidh Nur Sya Bani"
+              />
+
+            </div>
+
+          </div>
 
       </section>
 
