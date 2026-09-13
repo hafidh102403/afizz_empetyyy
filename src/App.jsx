@@ -98,7 +98,7 @@ const projects = [
 
   {
     number: "02",
-    title: "PMB MI ISLAMIYAH GUPPI CILENGKRANG",
+    title: "PMB MI Islamiyah GUPPI Cilengkrang",
     category: "WEB APPLICATION",
     description: {
       en: "New Student Admission (PMB) website for MI Islamiyah GUPPI Cilengkrang, featuring school information, educational programs, and the new student registration process.",
