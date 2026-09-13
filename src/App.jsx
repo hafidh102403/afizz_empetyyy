@@ -54,7 +54,7 @@ const experiences = [
   },
 
   {
-    date: "2024 – 2025",
+    date: "AGT 2024 – JAN 2025",
     company: "PT. PRAWATHIYA KARSA PRADIPTHA",
     role: {
       en: "QA & WEB DEVELOPER",
@@ -133,21 +133,21 @@ const projects = [
   },
 
   {
-    number: "05",
+  number: "05",
 
-    title: "Mobile LOS",
+  title: "Mobile LOS",
 
-    category: "MOBILE DEVELOPER",
+  category: "MOBILE DEVELOPER",
 
-    description: {
-      en: "Mobile application development project using Flutter, Dart, Java, and Android Studio, focused on developing and implementing application features based on project requirements.",
-      id: "Proyek pengembangan aplikasi mobile menggunakan Flutter, Dart, Java, dan Android Studio, dengan fokus pada pengembangan dan implementasi fitur aplikasi sesuai dengan kebutuhan proyek.",
-    },
-
-    tags: ["Flutter", "Dart", "Java", "Android Studio"],
-
-    image: "/projects/los1.jpeg",
+  description: {
+    en: "Mobile application development project using Flutter, Dart, Java, and Android Studio, focused on developing and implementing application features based on project requirements.",
+    id: "Proyek pengembangan aplikasi mobile menggunakan Flutter, Dart, Java, dan Android Studio, dengan fokus pada pengembangan dan implementasi fitur aplikasi sesuai dengan kebutuhan proyek.",
   },
+
+  tags: ["Flutter", "Dart", "Java", "Android Studio"],
+
+  image: "/projects/los1.jpeg",
+},
 
   {
     number: "06",
@@ -203,10 +203,15 @@ const qualityAssuranceSkills = [
   "Test Scenario",
   "Test Case",
   "Functional Testing",
+  "Positive Testing",
+  "Negative Testing",
   "Regression Testing",
+  "Smoke Testing",
+  "Retesting",
   "Bug Reporting",
   "UAT",
   "API Testing",
+  "Test Documentation",
 ];
 
 const webDevelopmentSkills = [
@@ -216,9 +221,9 @@ const webDevelopmentSkills = [
   "HTML",
   "CSS",
   "JavaScript",
+  "React",
   "Tailwind CSS",
 ];
-
 const tools = [
   "Git / GitHub",
   "Postman",
@@ -1073,60 +1078,108 @@ function App() {
         <div className="projects-grid">
 
           {projects.map(
-            (project) => (
+            (project) => {
 
-              <article
-                className="project-card"
-                key={project.number}
-              >
+              const projectUrl =
+                project.title === "CashFlow"
+                  ? "https://github.com/hafidh102403/cashflow-code"
+                  : "";
 
-                <ProjectPreview
-                  project={project}
-                />
+              return (
+                <article
+                  className={
+                    projectUrl
+                      ? "project-card project-card-clickable"
+                      : "project-card"
+                  }
+                  key={project.number}
+                  role={projectUrl ? "link" : undefined}
+                  tabIndex={projectUrl ? 0 : undefined}
+                  onClick={() => {
+                    if (projectUrl) {
+                      window.open(
+                        projectUrl,
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (
+                      projectUrl &&
+                      (event.key === "Enter" ||
+                        event.key === " ")
+                    ) {
+                      event.preventDefault();
 
-                <div className="project-card-info">
+                      window.open(
+                        projectUrl,
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
+                    }
+                  }}
+                >
 
-                  <div className="project-card-number">
-                    {project.number}
-                  </div>
+                  <ProjectPreview
+                    project={project}
+                  />
 
-                  <div className="project-card-heading">
+                  <div className="project-card-info">
 
-                    <span>
-                      {project.category}
-                    </span>
+                    <div className="project-card-number">
+                      {project.number}
+                    </div>
 
-                    <h3>
-                      {project.title}
-                    </h3>
+                    <div className="project-card-heading">
 
-                  </div>
+                      <span>
+                        {project.category}
+                      </span>
 
-                  <p>
+                      <h3>
+                        {project.title}
+                      </h3>
 
-                    {isEnglish
-                      ? project.description.en
-                      : project.description.id}
+                    </div>
 
-                  </p>
+                    <p>
 
-                  <div className="project-tags">
+                      {isEnglish
+                        ? project.description.en
+                        : project.description.id}
 
-                    {project.tags.map(
-                      (tag) => (
-                        <span key={tag}>
-                          {tag}
+                    </p>
+
+                    <div className="project-tags">
+
+                      {project.tags.map(
+                        (tag) => (
+                          <span key={tag}>
+                            {tag}
+                          </span>
+                        )
+                      )}
+
+                    </div>
+
+                    {projectUrl && (
+                      <div className="project-card-action">
+                        <span>
+                          {isEnglish
+                            ? "VIEW PROJECT"
+                            : "LIHAT PROYEK"}
                         </span>
-                      )
+
+                        <span>↗</span>
+                      </div>
                     )}
 
                   </div>
 
-                </div>
-
-              </article>
-
-            )
+                </article>
+              );
+            }
           )}
 
         </div>
