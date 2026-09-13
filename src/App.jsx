@@ -134,13 +134,18 @@ const projects = [
 
   {
     number: "05",
+
     title: "Mobile LOS",
-    category: "QUALITY ASSURANCE",
+
+    category: "MOBILE DEVELOPER",
+
     description: {
-      en: "Mobile application project involving test scenario preparation, functional testing, bug identification, and reporting.",
-      id: "Proyek aplikasi mobile yang meliputi pembuatan test scenario, functional testing, identifikasi bug, dan pelaporan bug.",
+      en: "Mobile application development project using Flutter, Dart, Java, and Android Studio, focused on developing and implementing application features based on project requirements.",
+      id: "Proyek pengembangan aplikasi mobile menggunakan Flutter, Dart, Java, dan Android Studio, dengan fokus pada pengembangan dan implementasi fitur aplikasi sesuai dengan kebutuhan proyek.",
     },
-    tags: ["QA Testing", "Mobile", "Testing"],
+
+    tags: ["Flutter", "Dart", "Java", "Android Studio"],
+
     image: "/projects/los1.jpeg",
   },
 
@@ -502,6 +507,7 @@ function App() {
               download="CV-Hafidh-Nur-Sya-Bani.pdf"
               className="profile-button button-dark"
             >
+
               <span className="download-icon">
                 ↓
               </span>
@@ -509,6 +515,7 @@ function App() {
               {isEnglish
                 ? "DOWNLOAD RESUME"
                 : "DOWNLOAD CV"}
+
             </a>
 
             <a
@@ -520,31 +527,24 @@ function App() {
                 : "LIHAT PROYEK"}
             </a>
 
-            <a
-              href="#contact"
-              className="profile-button button-outline"
-            >
-              {isEnglish
-                ? "CONTACT ME"
-                : "HUBUNGI SAYA"}
-            </a>
+          </div>
+
+        </div>
+
+        {/* PROFILE IMAGE */}
+
+        <div className="profile-image-area">
+
+          <div className="profile-image">
+
+            <img
+              src={profileImage}
+              alt="Hafidh Nur Sya Bani"
+            />
 
           </div>
 
-          {/* PROFILE IMAGE */}
-
-          <div className="profile-image-area">
-
-            <div className="profile-image">
-
-              <img
-                src={profileImage}
-                alt="Hafidh Nur Sya Bani"
-              />
-
-            </div>
-
-          </div>
+        </div>
 
       </section>
 
