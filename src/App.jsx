@@ -54,26 +54,28 @@ const experiences = [
   },
 
   {
-    date: "2024 – 2025",
+    date: "AUG 2024 – JAN 2025",
     company: "PT. PRAWATHIYA KARSA PRADIPTHA",
     role: {
-      en: "QA & WEB DEVELOPER",
-      id: "QA & WEB DEVELOPER",
+      en: "MOBILE DEVELOPER & QA",
+      id: "MOBILE DEVELOPER & QA",
     },
     description: {
       en: [
-        "Performed testing for Mobile LOS and Mobile LCS applications.",
-        "Created test scenarios and test cases.",
-        "Performed functional testing.",
-        "Identified and reported bugs.",
-        "Supported application development and improvement processes.",
+        "Developed mobile application features for Mobile LOS using Flutter and Dart.",
+        "Worked with Java and Android Studio during mobile application development.",
+        "Implemented and supported application features based on project requirements.",
+        "Performed QA testing activities for Mobile LCS.",
+        "Created test scenarios, performed functional testing, identified bugs, and reported issues.",
+        "Performed retesting to verify fixes and validate application functionality.",
       ],
       id: [
-        "Melakukan testing pada aplikasi Mobile LOS dan Mobile LCS.",
-        "Membuat test scenario dan test case.",
-        "Melakukan functional testing.",
-        "Mengidentifikasi dan melaporkan bug.",
-        "Mendukung proses pengembangan dan peningkatan aplikasi.",
+        "Mengembangkan fitur aplikasi mobile Mobile LOS menggunakan Flutter dan Dart.",
+        "Menggunakan Java dan Android Studio dalam proses pengembangan aplikasi mobile.",
+        "Mengimplementasikan dan mendukung pengembangan fitur berdasarkan kebutuhan proyek.",
+        "Melakukan aktivitas pengujian QA pada Mobile LCS.",
+        "Membuat test scenario, melakukan functional testing, mengidentifikasi bug, dan melaporkan masalah.",
+        "Melakukan retesting untuk memastikan perbaikan bug dan validasi fungsi aplikasi.",
       ],
     },
   },
@@ -135,12 +137,12 @@ const projects = [
   {
     number: "05",
     title: "Mobile LOS",
-    category: "QUALITY ASSURANCE",
+    category: "MOBILE DEVELOPER",
     description: {
-      en: "Mobile application project involving test scenario preparation, functional testing, bug identification, and reporting.",
-      id: "Proyek aplikasi mobile yang meliputi pembuatan test scenario, functional testing, identifikasi bug, dan pelaporan bug.",
+      en: "Mobile application development project involving feature development and application implementation using Flutter, Dart, Java, and Android Studio.",
+      id: "Proyek pengembangan aplikasi mobile yang meliputi pengembangan fitur dan implementasi aplikasi menggunakan Flutter, Dart, Java, dan Android Studio.",
     },
-    tags: ["QA Testing", "Mobile", "Testing"],
+    tags: ["Flutter", "Dart", "Java", "Android Studio"],
     image: "/projects/los1.jpeg",
   },
 
@@ -149,8 +151,8 @@ const projects = [
     title: "Mobile LCS",
     category: "QUALITY ASSURANCE",
     description: {
-      en: "Mobile application testing project involving test scenarios, positive testing, negative testing, and feature validation.",
-      id: "Proyek pengujian aplikasi mobile yang meliputi test scenario, positive testing, negative testing, dan validasi fitur.",
+      en: "Mobile application testing project involving test scenarios, functional testing, positive and negative testing, bug identification, bug reporting, and retesting.",
+      id: "Proyek pengujian aplikasi mobile yang meliputi test scenario, functional testing, positive dan negative testing, identifikasi bug, pelaporan bug, dan retesting.",
     },
     tags: ["QA Testing", "Mobile", "Testing"],
     image: "/projects/mobile-lcs.jpeg",
@@ -179,6 +181,7 @@ const certificates = [
     detail: "TOTAL SCORE : 510",
     file: "/certificates/certificate-02.pdf",
   },
+
   {
     number: "03",
     title: "UJI PROFISIENSI ERP ODOO PT. JIDOKA SYSTEM INDONESIA",
@@ -198,10 +201,15 @@ const qualityAssuranceSkills = [
   "Test Scenario",
   "Test Case",
   "Functional Testing",
+  "Positive Testing",
+  "Negative Testing",
   "Regression Testing",
+  "Smoke Testing",
+  "Retesting",
   "Bug Reporting",
   "UAT",
   "API Testing",
+  "Test Documentation",
 ];
 
 const webDevelopmentSkills = [
@@ -211,6 +219,7 @@ const webDevelopmentSkills = [
   "HTML",
   "CSS",
   "JavaScript",
+  "React",
   "Tailwind CSS",
 ];
 
@@ -275,14 +284,13 @@ const qaWorkflow = [
 
 /* =========================================================
    PROJECT PREVIEW
-   ========================================================= */
+========================================================= */
 
 function ProjectPreview({ project }) {
   const [imageError, setImageError] = useState(false);
 
   return (
     <div className="project-preview">
-
       {!imageError ? (
         <img
           src={project.image}
@@ -297,7 +305,6 @@ function ProjectPreview({ project }) {
           <small>{project.image}</small>
         </div>
       )}
-
     </div>
   );
 }
@@ -321,10 +328,7 @@ function App() {
 
       <nav className="navbar">
 
-        <a
-          href="#home"
-          className="navbar-name"
-        >
+        <a href="#home" className="navbar-name">
           HAFIDH NUR SYA BANI
         </a>
 
@@ -466,7 +470,7 @@ function App() {
         <div className="profile-content">
 
           <div className="profile-label">
-            QUALITY ASSURANCE & WEB DEVELOPER
+            QA ENGINEER
           </div>
 
           <h1 className="profile-title">
@@ -490,8 +494,8 @@ function App() {
           <p className="profile-description">
 
             {isEnglish
-              ? "QA & Web Developer who builds, tests, and improves web applications for better quality and reliability."
-              : "QA & Web Developer yang membangun, menguji, dan meningkatkan aplikasi web untuk menghasilkan kualitas dan keandalan yang lebih baik."}
+              ? "QA Engineer focused on software testing, quality assurance, and application validation, with additional experience in web and mobile development."
+              : "QA Engineer yang berfokus pada software testing, quality assurance, dan validasi aplikasi, dengan pengalaman tambahan dalam pengembangan web dan mobile."}
 
           </p>
 
@@ -502,7 +506,6 @@ function App() {
               download="CV-Hafidh-Nur-Sya-Bani.pdf"
               className="profile-button button-dark"
             >
-
               <span className="download-icon">
                 ↓
               </span>
@@ -510,7 +513,6 @@ function App() {
               {isEnglish
                 ? "DOWNLOAD RESUME"
                 : "DOWNLOAD CV"}
-
             </a>
 
             <a
@@ -525,8 +527,6 @@ function App() {
           </div>
 
         </div>
-
-        {/* PROFILE IMAGE */}
 
         <div className="profile-image-area">
 
@@ -580,15 +580,15 @@ function App() {
 
               {isEnglish ? (
                 <>
-                  QUALITY
+                  QA
                   <br />
-                  MINDSET
+                  ENGINEER
                 </>
               ) : (
                 <>
-                  POLA PIKIR
+                  QA
                   <br />
-                  BERKUALITAS
+                  ENGINEER
                 </>
               )}
 
@@ -605,8 +605,8 @@ function App() {
             <p className="summary-text">
 
               {isEnglish
-                ? "I am a fresh graduate in Information Systems with experience in Quality Assurance and Web Development. I have experience creating test scenarios, performing positive and negative testing, identifying and reporting bugs, and developing web-based applications using Laravel, PHP, MySQL, and related technologies."
-                : "Saya merupakan fresh graduate Sistem Informasi dengan pengalaman di bidang Quality Assurance dan Web Development. Saya memiliki pengalaman membuat test scenario, melakukan positive dan negative testing, mengidentifikasi dan melaporkan bug, serta mengembangkan aplikasi berbasis web menggunakan Laravel, PHP, MySQL, dan teknologi terkait."}
+                ? "I am an Information Systems graduate with experience in Quality Assurance, software testing, and application development. I have experience creating test scenarios and test cases, performing functional, positive, negative, regression, and API testing, identifying and reporting bugs, conducting retesting, and validating application functionality. I also have development experience using Laravel, PHP, MySQL, Flutter, Dart, Java, and related technologies."
+                : "Saya merupakan lulusan Sistem Informasi dengan pengalaman di bidang Quality Assurance, software testing, dan pengembangan aplikasi. Saya memiliki pengalaman membuat test scenario dan test case, melakukan functional, positive, negative, regression, dan API testing, mengidentifikasi serta melaporkan bug, melakukan retesting, dan memvalidasi fungsi aplikasi. Saya juga memiliki pengalaman pengembangan menggunakan Laravel, PHP, MySQL, Flutter, Dart, Java, dan teknologi terkait."}
 
             </p>
 
@@ -716,8 +716,8 @@ function App() {
 
             <p>
               {isEnglish
-                ? "QUALITY ASSURANCE WORKFLOW"
-                : "ALUR QUALITY ASSURANCE"}
+                ? "QA ENGINEER WORKFLOW"
+                : "ALUR KERJA QA ENGINEER"}
             </p>
 
           </div>
@@ -727,19 +727,15 @@ function App() {
         <div className="qa-intro">
 
           <div className="qa-intro-label">
-
             {isEnglish
-              ? "QUALITY ASSURANCE PROCESS"
-              : "PROSES QUALITY ASSURANCE"}
-
+              ? "QA ENGINEERING PROCESS"
+              : "PROSES QA ENGINEER"}
           </div>
 
           <p>
-
             {isEnglish
-              ? "A structured testing approach focused on validating application functionality, identifying issues, and improving software quality."
-              : "Pendekatan pengujian terstruktur yang berfokus pada validasi fungsi aplikasi, identifikasi masalah, dan peningkatan kualitas software."}
-
+              ? "A structured software testing process focused on validating application functionality, identifying defects, documenting issues, and verifying fixes to improve software quality."
+              : "Proses software testing terstruktur yang berfokus pada validasi fungsi aplikasi, identifikasi defect, dokumentasi masalah, dan verifikasi perbaikan untuk meningkatkan kualitas software."}
           </p>
 
         </div>
@@ -762,10 +758,10 @@ function App() {
 
                   {index <
                     qaWorkflow.length - 1 && (
-                      <span className="qa-arrow">
-                        →
-                      </span>
-                    )}
+                    <span className="qa-arrow">
+                      →
+                    </span>
+                  )}
 
                 </div>
 
@@ -774,11 +770,9 @@ function App() {
                 </h3>
 
                 <p>
-
                   {isEnglish
                     ? step.description.en
                     : step.description.id}
-
                 </p>
 
               </article>
@@ -794,8 +788,8 @@ function App() {
 
             <span>
               {isEnglish
-                ? "QA FOCUS"
-                : "FOKUS QA"}
+                ? "QA ENGINEER FOCUS"
+                : "FOKUS QA ENGINEER"}
             </span>
 
             <h3>
@@ -808,21 +802,10 @@ function App() {
 
           <div className="qa-focus-list">
 
-            <span>
-              Functional Testing
-            </span>
-
-            <span>
-              Positive Testing
-            </span>
-
-            <span>
-              Negative Testing
-            </span>
-
-            <span>
-              Regression Testing
-            </span>
+            <span>Functional Testing</span>
+            <span>Positive Testing</span>
+            <span>Negative Testing</span>
+            <span>Regression Testing</span>
 
             <span>
               {isEnglish
@@ -834,6 +817,14 @@ function App() {
               {isEnglish
                 ? "Bug Reporting"
                 : "Pelaporan Bug"}
+            </span>
+
+            <span>
+              API Testing
+            </span>
+
+            <span>
+              Retesting
             </span>
 
           </div>
@@ -861,8 +852,8 @@ function App() {
 
             <p>
               {isEnglish
-                ? "MOBILE LOS · QUALITY ASSURANCE PROJECT"
-                : "MOBILE LOS · PROYEK QUALITY ASSURANCE"}
+                ? "MOBILE LCS · QA ENGINEER PROJECT"
+                : "MOBILE LCS · PROYEK QA ENGINEER"}
             </p>
 
           </div>
@@ -876,13 +867,13 @@ function App() {
             <div>
 
               <span>
-                MOBILE LOS
+                MOBILE LCS
               </span>
 
               <h3>
                 {isEnglish
-                  ? "QUALITY ASSURANCE PROJECT"
-                  : "PROYEK QUALITY ASSURANCE"}
+                  ? "QA ENGINEER PROJECT"
+                  : "PROYEK QA ENGINEER"}
               </h3>
 
             </div>
@@ -900,45 +891,35 @@ function App() {
               <h4>TEST SCENARIO</h4>
             </div>
 
-            <div className="qa-case-arrow">
-              ↓
-            </div>
+            <div className="qa-case-arrow">↓</div>
 
             <div className="qa-case-step">
               <span>02</span>
               <h4>LOGIN FUNCTIONALITY</h4>
             </div>
 
-            <div className="qa-case-arrow">
-              ↓
-            </div>
+            <div className="qa-case-arrow">↓</div>
 
             <div className="qa-case-step">
               <span>03</span>
               <h4>POSITIVE & NEGATIVE TESTING</h4>
             </div>
 
-            <div className="qa-case-arrow">
-              ↓
-            </div>
+            <div className="qa-case-arrow">↓</div>
 
             <div className="qa-case-step">
               <span>04</span>
               <h4>BUG IDENTIFICATION</h4>
             </div>
 
-            <div className="qa-case-arrow">
-              ↓
-            </div>
+            <div className="qa-case-arrow">↓</div>
 
             <div className="qa-case-step">
               <span>05</span>
               <h4>BUG REPORT</h4>
             </div>
 
-            <div className="qa-case-arrow">
-              ↓
-            </div>
+            <div className="qa-case-arrow">↓</div>
 
             <div className="qa-case-step">
               <span>06</span>
@@ -950,11 +931,9 @@ function App() {
           <div className="qa-case-study-footer">
 
             <p>
-
               {isEnglish
                 ? "Testing workflow focused on validating login functionality, identifying issues, reporting bugs, and verifying fixes through retesting."
                 : "Alur pengujian yang berfokus pada validasi fungsi login, identifikasi masalah, pelaporan bug, dan verifikasi perbaikan melalui retesting."}
-
             </p>
 
           </div>
@@ -1009,11 +988,9 @@ function App() {
             </h4>
 
             <p>
-
               {isEnglish
-                ? "Studied Information Systems with a focus on information technology, software development, databases, system analysis, and application implementation."
-                : "Mempelajari Sistem Informasi dengan fokus pada teknologi informasi, pengembangan software, database, analisis sistem, dan implementasi aplikasi."}
-
+                ? "Studied Information Systems with a focus on information technology, software development, databases, system analysis, application implementation, and software quality."
+                : "Mempelajari Sistem Informasi dengan fokus pada teknologi informasi, pengembangan software, database, analisis sistem, implementasi aplikasi, dan kualitas software."}
             </p>
 
           </div>
@@ -1067,62 +1044,58 @@ function App() {
 
         <div className="projects-grid">
 
-          {projects.map(
-            (project) => (
+          {projects.map((project) => (
 
-              <article
-                className="project-card"
-                key={project.number}
-              >
+            <article
+              className="project-card"
+              key={project.number}
+            >
 
-                <ProjectPreview
-                  project={project}
-                />
+              <ProjectPreview
+                project={project}
+              />
 
-                <div className="project-card-info">
+              <div className="project-card-info">
 
-                  <div className="project-card-number">
-                    {project.number}
-                  </div>
+                <div className="project-card-number">
+                  {project.number}
+                </div>
 
-                  <div className="project-card-heading">
+                <div className="project-card-heading">
 
-                    <span>
-                      {project.category}
-                    </span>
+                  <span>
+                    {project.category}
+                  </span>
 
-                    <h3>
-                      {project.title}
-                    </h3>
-
-                  </div>
-
-                  <p>
-
-                    {isEnglish
-                      ? project.description.en
-                      : project.description.id}
-
-                  </p>
-
-                  <div className="project-tags">
-
-                    {project.tags.map(
-                      (tag) => (
-                        <span key={tag}>
-                          {tag}
-                        </span>
-                      )
-                    )}
-
-                  </div>
+                  <h3>
+                    {project.title}
+                  </h3>
 
                 </div>
 
-              </article>
+                <p>
+                  {isEnglish
+                    ? project.description.en
+                    : project.description.id}
+                </p>
 
-            )
-          )}
+                <div className="project-tags">
+
+                  {project.tags.map((tag) => (
+
+                    <span key={tag}>
+                      {tag}
+                    </span>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+            </article>
+
+          ))}
 
         </div>
 
@@ -1159,59 +1132,57 @@ function App() {
 
         <div className="certificates-list">
 
-          {certificates.map(
-            (certificate) => (
+          {certificates.map((certificate) => (
 
-              <article
-                className="certificate-card"
-                key={certificate.number}
+            <article
+              className="certificate-card"
+              key={certificate.number}
+            >
+
+              <div className="certificate-number">
+                {certificate.number}
+              </div>
+
+              <div className="certificate-main">
+
+                <span className="certificate-category">
+                  {certificate.category}
+                </span>
+
+                <h3>
+                  {certificate.title}
+                </h3>
+
+                <p>
+                  {certificate.detail}
+                </p>
+
+              </div>
+
+              <div className="certificate-year">
+                {certificate.year}
+              </div>
+
+              <a
+                href={certificate.file}
+                target="_blank"
+                rel="noreferrer"
+                className="certificate-view"
               >
 
-                <div className="certificate-number">
-                  {certificate.number}
-                </div>
+                {isEnglish
+                  ? "VIEW CERTIFICATE"
+                  : "LIHAT SERTIFIKAT"}
 
-                <div className="certificate-main">
+                <span>
+                  ↗
+                </span>
 
-                  <span className="certificate-category">
-                    {certificate.category}
-                  </span>
+              </a>
 
-                  <h3>
-                    {certificate.title}
-                  </h3>
+            </article>
 
-                  <p>
-                    {certificate.detail}
-                  </p>
-
-                </div>
-
-                <div className="certificate-year">
-                  {certificate.year}
-                </div>
-
-                <a
-                  href={certificate.file}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="certificate-view"
-                >
-
-                  {isEnglish
-                    ? "VIEW CERTIFICATE"
-                    : "LIHAT SERTIFIKAT"}
-
-                  <span>
-                    ↗
-                  </span>
-
-                </a>
-
-              </article>
-
-            )
-          )}
+          ))}
 
         </div>
 
@@ -1252,27 +1223,23 @@ function App() {
 
             <div className="skills-title">
 
-              <span>
-                01
-              </span>
+              <span>01</span>
 
               <h3>
-                QUALITY ASSURANCE
+                QA ENGINEER
               </h3>
 
             </div>
 
             <div className="skills-list">
 
-              {qualityAssuranceSkills.map(
-                (skill) => (
+              {qualityAssuranceSkills.map((skill) => (
 
-                  <span key={skill}>
-                    {skill}
-                  </span>
+                <span key={skill}>
+                  {skill}
+                </span>
 
-                )
-              )}
+              ))}
 
             </div>
 
@@ -1282,9 +1249,7 @@ function App() {
 
             <div className="skills-title">
 
-              <span>
-                02
-              </span>
+              <span>02</span>
 
               <h3>
                 WEB DEVELOPMENT
@@ -1294,15 +1259,13 @@ function App() {
 
             <div className="skills-list">
 
-              {webDevelopmentSkills.map(
-                (skill) => (
+              {webDevelopmentSkills.map((skill) => (
 
-                  <span key={skill}>
-                    {skill}
-                  </span>
+                <span key={skill}>
+                  {skill}
+                </span>
 
-                )
-              )}
+              ))}
 
             </div>
 
@@ -1312,9 +1275,7 @@ function App() {
 
             <div className="skills-title">
 
-              <span>
-                03
-              </span>
+              <span>03</span>
 
               <h3>
                 TOOLS
@@ -1324,15 +1285,13 @@ function App() {
 
             <div className="skills-list">
 
-              {tools.map(
-                (tool) => (
+              {tools.map((tool) => (
 
-                  <span key={tool}>
-                    {tool}
-                  </span>
+                <span key={tool}>
+                  {tool}
+                </span>
 
-                )
-              )}
+              ))}
 
             </div>
 
@@ -1384,11 +1343,9 @@ function App() {
           <div className="contact-info">
 
             <p>
-
               {isEnglish
-                ? "I'm open to opportunities related to Quality Assurance, Quality Engineering, Web Development, and other technology-related roles."
-                : "Saya terbuka untuk kesempatan di bidang Quality Assurance, Quality Engineering, Web Development, dan bidang teknologi lainnya."}
-
+                ? "I'm open to opportunities related to QA Engineering, Software Testing, Quality Assurance, Web Development, and other technology-related roles."
+                : "Saya terbuka untuk kesempatan di bidang QA Engineering, Software Testing, Quality Assurance, Web Development, dan bidang teknologi lainnya."}
             </p>
 
             <div className="contact-links">
@@ -1397,15 +1354,8 @@ function App() {
                 href="mailto:hafidsyabani24@gmail.com"
                 className="contact-link"
               >
-
-                <span>
-                  GMAIL
-                </span>
-
-                <span>
-                  ↗
-                </span>
-
+                <span>GMAIL</span>
+                <span>↗</span>
               </a>
 
               <a
@@ -1414,15 +1364,8 @@ function App() {
                 rel="noreferrer"
                 className="contact-link"
               >
-
-                <span>
-                  LINKEDIN
-                </span>
-
-                <span>
-                  ↗
-                </span>
-
+                <span>LINKEDIN</span>
+                <span>↗</span>
               </a>
 
               <a
@@ -1431,15 +1374,8 @@ function App() {
                 rel="noreferrer"
                 className="contact-link"
               >
-
-                <span>
-                  WHATSAPP
-                </span>
-
-                <span>
-                  ↗
-                </span>
-
+                <span>WHATSAPP</span>
+                <span>↗</span>
               </a>
 
             </div>
@@ -1455,7 +1391,7 @@ function App() {
           </span>
 
           <span>
-            QUALITY ASSURANCE & WEB DEVELOPER
+            QA ENGINEER
           </span>
 
           <span>
