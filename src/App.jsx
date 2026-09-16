@@ -314,10 +314,12 @@ function ProjectPreview({ project }) {
 ========================================================= */
 
 function App() {
-  const [language, setLanguage] = useState("ID");
+  // English is the default language
+  const [language, setLanguage] = useState("en");
   const [moreOpen, setMoreOpen] = useState(false);
 
-  const isEnglish = language === "EN";
+  // Language check
+  const isEnglish = language === "en";
 
   return (
     <div className="portfolio">
@@ -420,6 +422,10 @@ function App() {
 
         </div>
 
+        {/* =====================================================
+            LANGUAGE SWITCHER
+        ===================================================== */}
+
         <div className="navbar-language">
 
           <span className="globe">
@@ -429,11 +435,11 @@ function App() {
           <button
             type="button"
             className={
-              language === "ID"
+              language === "id"
                 ? "language-active"
                 : "language-muted"
             }
-            onClick={() => setLanguage("ID")}
+            onClick={() => setLanguage("id")}
           >
             INA
           </button>
@@ -445,11 +451,11 @@ function App() {
           <button
             type="button"
             className={
-              language === "EN"
+              language === "en"
                 ? "language-active"
                 : "language-muted"
             }
-            onClick={() => setLanguage("EN")}
+            onClick={() => setLanguage("en")}
           >
             EN
           </button>
@@ -577,21 +583,9 @@ function App() {
           <div className="summary-side">
 
             <span>
-
-              {isEnglish ? (
-                <>
-                  QA
-                  <br />
-                  ENGINEER
-                </>
-              ) : (
-                <>
-                  QA
-                  <br />
-                  ENGINEER
-                </>
-              )}
-
+              QA
+              <br />
+              ENGINEER
             </span>
 
           </div>
@@ -802,10 +796,21 @@ function App() {
 
           <div className="qa-focus-list">
 
-            <span>Functional Testing</span>
-            <span>Positive Testing</span>
-            <span>Negative Testing</span>
-            <span>Regression Testing</span>
+            <span>
+              Functional Testing
+            </span>
+
+            <span>
+              Positive Testing
+            </span>
+
+            <span>
+              Negative Testing
+            </span>
+
+            <span>
+              Regression Testing
+            </span>
 
             <span>
               {isEnglish
@@ -852,8 +857,8 @@ function App() {
 
             <p>
               {isEnglish
-                ? "MOBILE LCS · QA ENGINEER PROJECT"
-                : "MOBILE LCS · PROYEK QA ENGINEER"}
+                ? "MOBILE LCS · SOFTWARE TESTING"
+                : "MOBILE LCS · SOFTWARE TESTING"}
             </p>
 
           </div>
@@ -871,9 +876,7 @@ function App() {
               </span>
 
               <h3>
-                {isEnglish
-                  ? "QA ENGINEER PROJECT"
-                  : "PROYEK QA ENGINEER"}
+                SOFTWARE TESTING
               </h3>
 
             </div>
@@ -891,35 +894,45 @@ function App() {
               <h4>TEST SCENARIO</h4>
             </div>
 
-            <div className="qa-case-arrow">↓</div>
+            <div className="qa-case-arrow">
+              ↓
+            </div>
 
             <div className="qa-case-step">
               <span>02</span>
               <h4>LOGIN FUNCTIONALITY</h4>
             </div>
 
-            <div className="qa-case-arrow">↓</div>
+            <div className="qa-case-arrow">
+              ↓
+            </div>
 
             <div className="qa-case-step">
               <span>03</span>
               <h4>POSITIVE & NEGATIVE TESTING</h4>
             </div>
 
-            <div className="qa-case-arrow">↓</div>
+            <div className="qa-case-arrow">
+              ↓
+            </div>
 
             <div className="qa-case-step">
               <span>04</span>
               <h4>BUG IDENTIFICATION</h4>
             </div>
 
-            <div className="qa-case-arrow">↓</div>
+            <div className="qa-case-arrow">
+              ↓
+            </div>
 
             <div className="qa-case-step">
               <span>05</span>
               <h4>BUG REPORT</h4>
             </div>
 
-            <div className="qa-case-arrow">↓</div>
+            <div className="qa-case-arrow">
+              ↓
+            </div>
 
             <div className="qa-case-step">
               <span>06</span>
@@ -1223,7 +1236,9 @@ function App() {
 
             <div className="skills-title">
 
-              <span>01</span>
+              <span>
+                01
+              </span>
 
               <h3>
                 QA ENGINEER
@@ -1233,13 +1248,15 @@ function App() {
 
             <div className="skills-list">
 
-              {qualityAssuranceSkills.map((skill) => (
+              {qualityAssuranceSkills.map(
+                (skill) => (
 
-                <span key={skill}>
-                  {skill}
-                </span>
+                  <span key={skill}>
+                    {skill}
+                  </span>
 
-              ))}
+                )
+              )}
 
             </div>
 
@@ -1249,7 +1266,9 @@ function App() {
 
             <div className="skills-title">
 
-              <span>02</span>
+              <span>
+                02
+              </span>
 
               <h3>
                 WEB DEVELOPMENT
@@ -1259,13 +1278,15 @@ function App() {
 
             <div className="skills-list">
 
-              {webDevelopmentSkills.map((skill) => (
+              {webDevelopmentSkills.map(
+                (skill) => (
 
-                <span key={skill}>
-                  {skill}
-                </span>
+                  <span key={skill}>
+                    {skill}
+                  </span>
 
-              ))}
+                )
+              )}
 
             </div>
 
@@ -1275,7 +1296,9 @@ function App() {
 
             <div className="skills-title">
 
-              <span>03</span>
+              <span>
+                03
+              </span>
 
               <h3>
                 TOOLS
@@ -1285,13 +1308,15 @@ function App() {
 
             <div className="skills-list">
 
-              {tools.map((tool) => (
+              {tools.map(
+                (tool) => (
 
-                <span key={tool}>
-                  {tool}
-                </span>
+                  <span key={tool}>
+                    {tool}
+                  </span>
 
-              ))}
+                )
+              )}
 
             </div>
 
@@ -1354,8 +1379,13 @@ function App() {
                 href="mailto:hafidsyabani24@gmail.com"
                 className="contact-link"
               >
-                <span>GMAIL</span>
-                <span>↗</span>
+                <span>
+                  GMAIL
+                </span>
+
+                <span>
+                  ↗
+                </span>
               </a>
 
               <a
@@ -1364,8 +1394,13 @@ function App() {
                 rel="noreferrer"
                 className="contact-link"
               >
-                <span>LINKEDIN</span>
-                <span>↗</span>
+                <span>
+                  LINKEDIN
+                </span>
+
+                <span>
+                  ↗
+                </span>
               </a>
 
               <a
@@ -1374,8 +1409,13 @@ function App() {
                 rel="noreferrer"
                 className="contact-link"
               >
-                <span>WHATSAPP</span>
-                <span>↗</span>
+                <span>
+                  WHATSAPP
+                </span>
+
+                <span>
+                  ↗
+                </span>
               </a>
 
             </div>
