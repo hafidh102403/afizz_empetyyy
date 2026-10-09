@@ -149,7 +149,7 @@ const projects = [
   {
     number: "06",
     title: "Mobile LCS",
-    category: "QUALITY ASSURANCE",
+    category: "QA TESTING",
     description: {
       en: "Mobile application testing project involving test scenarios, functional testing, positive and negative testing, bug identification, bug reporting, and retesting.",
       id: "Proyek pengujian aplikasi mobile yang meliputi test scenario, functional testing, positive dan negative testing, identifikasi bug, pelaporan bug, dan retesting.",
@@ -189,6 +189,15 @@ const certificates = [
     year: "2025",
     detail: "SN : 2024",
     file: "/certificates/certificate-03.pdf",
+  },
+
+    {
+    number: "04",
+    title: "SERTIFIKAT MAGANG HUB POLITEKNIK APP JAKARTA",
+    category: "INTERNSHIP CERTIFICATE",
+    year: "x2026",
+    detail: "IT STAFF – PERPUSTAKAAN",
+    file: "/certificates/certificate-04.pdf",
   },
 ];
 
@@ -314,11 +323,9 @@ function ProjectPreview({ project }) {
 ========================================================= */
 
 function App() {
-  // English is the default language
   const [language, setLanguage] = useState("en");
   const [moreOpen, setMoreOpen] = useState(false);
 
-  // Language check
   const isEnglish = language === "en";
 
   return (
@@ -476,7 +483,7 @@ function App() {
         <div className="profile-content">
 
           <div className="profile-label">
-            QA ENGINEER
+            QA ENGINEER & WEB DEVELOPER
           </div>
 
           <h1 className="profile-title">
@@ -500,8 +507,8 @@ function App() {
           <p className="profile-description">
 
             {isEnglish
-              ? "QA Engineer focused on software testing, quality assurance, and application validation, with additional experience in web and mobile development."
-              : "QA Engineer yang berfokus pada software testing, quality assurance, dan validasi aplikasi, dengan pengalaman tambahan dalam pengembangan web dan mobile."}
+              ? "QA Engineer & Web Developer with experience in software testing, application validation, and web application development. Skilled in manual testing, test case creation, bug reporting, and developing web applications using Laravel, PHP, MySQL, and JavaScript."
+              : "QA Engineer & Web Developer dengan pengalaman dalam software testing, validasi aplikasi, dan pengembangan aplikasi web. Memiliki kemampuan dalam manual testing, pembuatan test case, bug reporting, serta pengembangan web menggunakan Laravel, PHP, MySQL, dan JavaScript."}
 
           </p>
 
@@ -512,6 +519,7 @@ function App() {
               download="CV-Hafidh-Nur-Sya-Bani.pdf"
               className="profile-button button-dark"
             >
+
               <span className="download-icon">
                 ↓
               </span>
@@ -519,6 +527,7 @@ function App() {
               {isEnglish
                 ? "DOWNLOAD RESUME"
                 : "DOWNLOAD CV"}
+
             </a>
 
             <a
@@ -586,6 +595,12 @@ function App() {
               QA
               <br />
               ENGINEER
+              <br />
+              &
+              <br />
+              WEB
+              <br />
+              DEVELOPER
             </span>
 
           </div>
@@ -599,8 +614,8 @@ function App() {
             <p className="summary-text">
 
               {isEnglish
-                ? "I am an Information Systems graduate with experience in Quality Assurance, software testing, and application development. I have experience creating test scenarios and test cases, performing functional, positive, negative, regression, and API testing, identifying and reporting bugs, conducting retesting, and validating application functionality. I also have development experience using Laravel, PHP, MySQL, Flutter, Dart, Java, and related technologies."
-                : "Saya merupakan lulusan Sistem Informasi dengan pengalaman di bidang Quality Assurance, software testing, dan pengembangan aplikasi. Saya memiliki pengalaman membuat test scenario dan test case, melakukan functional, positive, negative, regression, dan API testing, mengidentifikasi serta melaporkan bug, melakukan retesting, dan memvalidasi fungsi aplikasi. Saya juga memiliki pengalaman pengembangan menggunakan Laravel, PHP, MySQL, Flutter, Dart, Java, dan teknologi terkait."}
+                ? "I am an Information Systems graduate with experience in Quality Assurance, software testing, and web application development. I have experience creating test scenarios and test cases, performing functional, positive, negative, regression, and API testing, identifying and reporting bugs, conducting retesting, and validating application functionality. I also have development experience using Laravel, PHP, MySQL, JavaScript, React, Flutter, Dart, and Java."
+                : "Saya merupakan lulusan Sistem Informasi dengan pengalaman di bidang Quality Assurance, software testing, dan pengembangan aplikasi web. Saya memiliki pengalaman membuat test scenario dan test case, melakukan functional, positive, negative, regression, dan API testing, mengidentifikasi serta melaporkan bug, melakukan retesting, dan memvalidasi fungsi aplikasi. Saya juga memiliki pengalaman pengembangan menggunakan Laravel, PHP, MySQL, JavaScript, React, Flutter, Dart, dan Java."}
 
             </p>
 
@@ -672,9 +687,11 @@ function App() {
                       : experience.description.id
                     ).map(
                       (item, itemIndex) => (
+
                         <li key={itemIndex}>
                           {item}
                         </li>
+
                       )
                     )}
 
@@ -721,15 +738,19 @@ function App() {
         <div className="qa-intro">
 
           <div className="qa-intro-label">
+
             {isEnglish
               ? "QA ENGINEERING PROCESS"
               : "PROSES QA ENGINEER"}
+
           </div>
 
           <p>
+
             {isEnglish
               ? "A structured software testing process focused on validating application functionality, identifying defects, documenting issues, and verifying fixes to improve software quality."
               : "Proses software testing terstruktur yang berfokus pada validasi fungsi aplikasi, identifikasi defect, dokumentasi masalah, dan verifikasi perbaikan untuk meningkatkan kualitas software."}
+
           </p>
 
         </div>
@@ -750,8 +771,7 @@ function App() {
                     {step.number}
                   </span>
 
-                  {index <
-                    qaWorkflow.length - 1 && (
+                  {index < qaWorkflow.length - 1 && (
                     <span className="qa-arrow">
                       →
                     </span>
@@ -856,9 +876,7 @@ function App() {
             </h2>
 
             <p>
-              {isEnglish
-                ? "MOBILE LCS · SOFTWARE TESTING"
-                : "MOBILE LCS · SOFTWARE TESTING"}
+              MOBILE LCS · SOFTWARE TESTING
             </p>
 
           </div>
@@ -944,9 +962,11 @@ function App() {
           <div className="qa-case-study-footer">
 
             <p>
+
               {isEnglish
                 ? "Testing workflow focused on validating login functionality, identifying issues, reporting bugs, and verifying fixes through retesting."
                 : "Alur pengujian yang berfokus pada validasi fungsi login, identifikasi masalah, pelaporan bug, dan verifikasi perbaikan melalui retesting."}
+
             </p>
 
           </div>
@@ -1001,9 +1021,11 @@ function App() {
             </h4>
 
             <p>
+
               {isEnglish
                 ? "Studied Information Systems with a focus on information technology, software development, databases, system analysis, application implementation, and software quality."
                 : "Mempelajari Sistem Informasi dengan fokus pada teknologi informasi, pengembangan software, database, analisis sistem, implementasi aplikasi, dan kualitas software."}
+
             </p>
 
           </div>
@@ -1087,9 +1109,11 @@ function App() {
                 </div>
 
                 <p>
+
                   {isEnglish
                     ? project.description.en
                     : project.description.id}
+
                 </p>
 
                 <div className="project-tags">
@@ -1368,9 +1392,11 @@ function App() {
           <div className="contact-info">
 
             <p>
+
               {isEnglish
-                ? "I'm open to opportunities related to QA Engineering, Software Testing, Quality Assurance, Web Development, and other technology-related roles."
-                : "Saya terbuka untuk kesempatan di bidang QA Engineering, Software Testing, Quality Assurance, Web Development, dan bidang teknologi lainnya."}
+                ? "I'm open to opportunities related to QA Engineering, Software Testing, Web Development, and other technology-related roles."
+                : "Saya terbuka untuk kesempatan di bidang QA Engineering, Software Testing, Web Development, dan bidang teknologi lainnya."}
+
             </p>
 
             <div className="contact-links">
@@ -1379,6 +1405,7 @@ function App() {
                 href="mailto:hafidsyabani24@gmail.com"
                 className="contact-link"
               >
+
                 <span>
                   GMAIL
                 </span>
@@ -1386,6 +1413,7 @@ function App() {
                 <span>
                   ↗
                 </span>
+
               </a>
 
               <a
@@ -1394,6 +1422,7 @@ function App() {
                 rel="noreferrer"
                 className="contact-link"
               >
+
                 <span>
                   LINKEDIN
                 </span>
@@ -1401,14 +1430,16 @@ function App() {
                 <span>
                   ↗
                 </span>
+
               </a>
 
               <a
-                href="https://wa.me/6282129096033"
+                href="https://wa.me/62895336145850"
                 target="_blank"
                 rel="noreferrer"
                 className="contact-link"
               >
+
                 <span>
                   WHATSAPP
                 </span>
@@ -1416,6 +1447,7 @@ function App() {
                 <span>
                   ↗
                 </span>
+
               </a>
 
             </div>
@@ -1431,7 +1463,7 @@ function App() {
           </span>
 
           <span>
-            QA ENGINEER
+            QA ENGINEER & WEB DEVELOPER
           </span>
 
           <span>
